@@ -21,7 +21,7 @@ sentiment_labels = ['Negative', 'Neutral', 'Positive', 'Irrelevant']
 # Load model and tokenizer 
 @st.cache_resource
 def load_sentiment_model():
-    model = load_model("sentiment_model.h5")
+    model = load_model("sentiment_model.keras")
 
     with open("tokenizer.pkl", "rb") as f:
         tokenizer = pickle.load(f)
@@ -50,4 +50,5 @@ if st.button("Analyze Sentiment"):
             # Display result
         st.success(f"**Predicted Sentiment:** {sentiment} ({confidence:.2%} confidence)")
     else:
+
         st.warning("Please enter some text before analyzing.")
