@@ -3,6 +3,9 @@ import numpy as np
 import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import json
+import tensorflow as tf
+from tensorflow.keras.preprocessing.text import tokenizer_from_json, Tokenizer
    
    
    
@@ -53,4 +56,5 @@ if st.button("Analyze Sentiment"):
     else:
 
         st.warning("Please enter some text before analyzing.")
+
 
