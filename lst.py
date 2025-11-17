@@ -26,10 +26,10 @@ sentiment_labels = ['Negative', 'Neutral', 'Positive', 'Irrelevant']
 def load_sentiment_model():
     model = load_model("sentiment_model.keras")
 
-   with open("tokenizer.json", "r") as f:
+    with open("tokenizer.json", "r") as f:
        tokenizer_json = f.read()
-   tokenizer = tokenizer_from_json(tokenizer_json)
-   return model, tokenizer
+    tokenizer = tokenizer_from_json(tokenizer_json)
+    return model, tokenizer
 
 
 model, tokenizer = load_sentiment_model()
@@ -56,5 +56,6 @@ if st.button("Analyze Sentiment"):
     else:
 
         st.warning("Please enter some text before analyzing.")
+
 
 
